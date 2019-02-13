@@ -58,4 +58,4 @@ el software de Mojang y al no poder redistribuirse no lo puedo subir.
 No, la persistencia en volume, solo incluye los archivos ops.json, banned-\*.json, whitelist.json y server.properties.
 
 ### ¿Donde puedo encontrar mas información sobre las configuración personalizada?
-Las variables son las mismas que el archivo server.properties pero en mayusculas y cambiando el guion medio (-) por guion bajo (\_), y se puede encontrar mas información en la [paguina oficial](https://minecraft-es.gamepedia.com/Server.properties).
+Las variables son las mismas que el archivo server.properties pero en mayúsculas y cambiando el guion medio (-) por guion bajo (\_), y se puede encontrar mas información en la [pagina oficial](https://minecraft-es.gamepedia.com/Server.properties).
