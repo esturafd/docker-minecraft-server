@@ -13,6 +13,10 @@ echo "[]" > banned-ips.json
 echo "[]" > whitelist.json
 
 cd ..
+mkdir logs && cd logs
+echo '[]' > usercache.json
+
+cd ..
 ln -s ${MINECRAFT_HOME}/data/ops.json
 ln -s ${MINECRAFT_HOME}/data/banned-players.json
 ln -s ${MINECRAFT_HOME}/data/banned-ips.json
