@@ -19,7 +19,10 @@ docker run -d -p 25565:25565 streameast/minecraft-server
 ### Persistencia de configuración
 
 ```
-docker run -d -p 25565:25565 -v somedir:/opt/minecraft-server/data streameast/minecraft-server
+docker run -d -p 25565:25565 \
+      -v somedir:/opt/minecraft-server/data \
+      -v otherdir:/opt/minecraft-server/logs \
+      streameast/minecraft-server
 ```
 
 ### configuraciones personalizadas
@@ -55,7 +58,7 @@ Esto es por la licencia de no redistribución de minecraft, al compilar se desca
 el software de Mojang y al no poder redistribuirse no lo puedo subir.
 
 ### Los archivos de configuración normalmente están en la misma carpeta que jar del servidor, ¿La persistencia también incluye el jar?
-No, la persistencia en volume, solo incluye los archivos ops.json, banned-\*.json, whitelist.json y server.properties.
+No, la persistencia en volume, solo incluye los archivos ops.json, banned-\*.json, whitelist.json, server.properties y la carpeta del mapa.
 
 ### ¿Donde puedo encontrar mas información sobre las configuración personalizada?
 Las variables son las mismas que el archivo server.properties pero en mayúsculas y cambiando el guion medio (-) por guion bajo (\_), y se puede encontrar mas información en esta [pagina](https://minecraft-es.gamepedia.com/Server.properties).
