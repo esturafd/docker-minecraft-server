@@ -1,64 +1,68 @@
 # docker-minecraft-server
 
-Este proyecto es una imagen docker para un servidor de minecraft.
+Other languages available: [spanish](https://github.com/streameast/docker-minecraft-server/blob/master/README-es.md)
 
-## Compilar
+This project is a docker image for a minecraft server.
 
-```
+## Build
+
+```bash
 git clone https://github.com/streameast/docker-minecraft-server.git
 cd docker-minecraft-server
 docker build -t streameast/minecraft-server .
 ```
 
-## Uso
+## Use
 
-```
+```bash
 docker run -d -p 25565:25565 streameast/minecraft-server
 ```
 
-### Persistencia de configuración
+### Pesistance of configuration
 
-```
+```bash
 docker run -d -p 25565:25565 \
       -v somedir:/opt/minecraft-server/data \
       -v otherdir:/opt/minecraft-server/logs \
       streameast/minecraft-server
 ```
 
-### configuraciones personalizadas
+### Custom configuration
 
-Se habilito todas las configuraciones propias del servidor de minecraft existentes
-en el archivo server.properties, aquí se lista algunas, más información en la
-documentación oficial de minecraft.
+All minecraft server configurations existing in the server.properties file are
+enabled, some of them are listed here, more information in the official minecraft documentation.
 
-```
+```bash
 docker run -d -p 25565:25565 -e LEVEL_NAME=miservidor streameast/minecraft-server
 ```
 
 #### LEVEL_NAME
 
-Nombre del servidor.
+Server name.
 
 #### MOTD
 
-Descripción del servidor.
+Server description.
 
 #### GAMEMODE
 
-Tipo de juego.
+Game mode.
 
 #### SERVER_PORT
 
-Puerto del servidor.
+Server port.
 
 ## FAQ
 
-### ¿Por que no encuentro la imagen en docker-hub?
-Esto es por la licencia de no redistribución de minecraft, al compilar se descarga
-el software de Mojang y al no poder redistribuirse no lo puedo subir.
+### Why can not I find the image in docker-hub?
+This is because of the non-redistribution license of minecraft, when compiling
+the Mojang software is downloaded and as it can not be redistributed I can not upload it.
 
-### Los archivos de configuración normalmente están en la misma carpeta que jar del servidor, ¿La persistencia también incluye el jar?
-No, la persistencia en volume, solo incluye los archivos ops.json, banned-\*.json, whitelist.json, server.properties y la carpeta del mapa.
+### The configuration files are usually in the same folder as the server jar, does persistence also include jar?
+No, the persistence in volume, only includes the files ops.json, banned-\*.json,
+whitelist.json, server.properties and the map folder.
 
-### ¿Donde puedo encontrar mas información sobre las configuración personalizada?
-Las variables son las mismas que el archivo server.properties pero en mayúsculas y cambiando el guion medio (-) por guion bajo (\_), y se puede encontrar mas información en esta [pagina](https://minecraft-es.gamepedia.com/Server.properties).
+### Where can I find more information about custom settings?
+The variables are the same as the server.properties file but in uppercase and
+changing the middle dash (-) by underscore (\_), and you can find more information
+on this [page](https://minecraft-es.gamepedia.com/Server.properties).
