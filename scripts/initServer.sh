@@ -20,4 +20,12 @@ mkdir $MAP
 
 cd $MINECRAFT_HOME
 ln -s $MINECRAFT_HOME/data/$MAP
-java -Xmx1024M -Xms1024M -jar ${MINECRAFT_HOME}/server.jar nogui
+
+if [ -n "MINECRAFT_XMX" ]; then
+   MINECRAFT_XMX="-Xmx${MINECRAFT_XMX}"
+fi
+if [ -n "MINECRAFT_XMS" ]; then
+   MINECRAFT_XMS="-Xms${MINECRAFT_XMS}"
+fi
+
+java $MINECRAFT_XMX $MINECRAFT_XMS -jar ${MINECRAFT_HOME}/server.jar nogui
