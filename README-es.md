@@ -53,6 +53,22 @@ Tipo de juego.
 
 Puerto del servidor.
 
+Ademas de estas variables, también hay otras dos que controlan la asignacion de
+memoria que tendrá el servidor, por defecto ambas tienen valor de 1024M, recomendado
+por Mojang.
+
+```bash
+docker run -d -p 25565:25565 -e MINECRAFT_XMX=2048M -e MINECRAFT_XMS=2048M streameast/minecraft-server
+```
+
+#### MINECRAFT_XMX
+
+Máximo tamaño de memoria.
+
+#### MINECRAFT_XMS
+
+Tamaño inicial de memoria.
+
 ## FAQ
 
 ### ¿Por que no encuentro la imagen en docker-hub?

@@ -52,6 +52,21 @@ Game mode.
 
 Server port.
 
+In addition to these variables, there are also two others that control the memory
+allocation that the server will have, by default both have a value of 1024M, recommended by Mojang.
+
+```bash
+docker run -d -p 25565:25565 -e MINECRAFT_XMX=2048M -e MINECRAFT_XMS=2048M streameast/minecraft-server
+```
+
+#### MINECRAFT_XMX
+
+Maximum memory size.
+
+#### MINECRAFT_XMS
+
+Initial memory size.
+
 ## FAQ
 
 ### Why can not I find the image in docker-hub?
