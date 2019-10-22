@@ -1,5 +1,12 @@
 #/bin/bash
 
+cd ${MINECRAFT_HOME}/
+SOURCE=https://launcher.mojang.com/v1/objects/3dc3d84a581f14691199cf6831b71ed1296a9fdf/server.jar
+if [ -n "${MINECRAFT_SOURCE}" ]; then
+    SOURCE=$MINECRAFT_SOURCE
+fi
+wget -O server.jar $SOURCE
+
 cd ${MINECRAFT_HOME}/data
 PROPERTIES=$(cat server.properties | grep -v '^#')
 for i in $(echo -e "$PROPERTIES"); do
